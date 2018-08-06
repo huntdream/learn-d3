@@ -1,3 +1,1 @@
-# webpack-template
-
-with babel and sass
+# Learn D3.js
