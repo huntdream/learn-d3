@@ -10,7 +10,7 @@ const config = {
     index: './src/app.js'
   },
   output: {
-    filename: '[name].bundle.js',
+    filename: './js/[name].bundle.js',
     path: path.resolve(__dirname, 'build')
   },
   module: {
@@ -35,7 +35,7 @@ const config = {
           {
             loader: 'file-loader',
             options: {
-              name: '[path][name].[ext]'
+              name: './assets/[name].[ext]'
             }
           }
         ]
