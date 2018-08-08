@@ -9,6 +9,9 @@ const config = {
   entry: {
     index: './src/app.js'
   },
+  devServer: {
+    open: true
+  },
   output: {
     filename: './js/[name].bundle.js',
     path: path.resolve(__dirname, 'build')
@@ -55,7 +58,7 @@ const config = {
     }),
     new HTMLWebpackPlugin({
       template: './index.html',
-      title: 'Template'
+      title: 'D3'
     })
   ]
 };
