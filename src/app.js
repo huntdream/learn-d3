@@ -134,6 +134,24 @@ function Draw() {
         .attr('x2', x(d.key) + x.bandwidth())
         .attr('y2', y12)
         .attr('stroke', 'green');
+
+      const tooltip = svg
+        .append('rect')
+        .attr('id', 'tooltip')
+        .attr('fill', 'rgba(0,0,0,0.6)')
+        .attr('x', x(d.key) + x.bandwidth() / 2 - 40)
+        .attr('y', y12 - 40)
+        .attr('height', 30)
+        .attr('width', 80);
+
+      svg
+        .append('text')
+        .attr('id', 'amount')
+        .attr('x', x(d.key) + x.bandwidth() / 2)
+        .attr('y', y12 - 20)
+        .attr('text-anchor', 'middle')
+        .attr('fill', '#fff')
+        .text(d.value);
     })
     .on('mouseleave', function() {
       d3.select(this)
@@ -143,5 +161,7 @@ function Draw() {
         .attr('width', x.bandwidth());
 
       d3.select('#limit').remove();
+      d3.select('#amount').remove();
+      d3.select('#tooltip').remove();
     });
 }
