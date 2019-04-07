@@ -7,7 +7,8 @@ const config = {
   mode: 'development',
   devtool: 'inline-source-map',
   entry: {
-    index: './src/app.js'
+    index: './src/app.js',
+    sort: './src/sort.js'
   },
   devServer: {
     open: true
@@ -58,7 +59,15 @@ const config = {
     }),
     new HTMLWebpackPlugin({
       template: './index.html',
-      title: 'D3'
+      filename: 'index',
+      title: 'D3',
+      chunks: ['index']
+    }),
+    new HTMLWebpackPlugin({
+      template: './index.html',
+      filename: 'sort',
+      title: 'Sort',
+      chunks: ['sort']
     })
   ]
 };
